@@ -21,7 +21,7 @@ let shops = [{
   {
     header: 'Reliance',
     description: 'We would have been at the top if it were for Mukesh'
-  },]
+  }]
 class Home extends Component {
 
     addStore = (header) => {
@@ -31,11 +31,12 @@ class Home extends Component {
     render() {
       let list = shops.map ( (shop, index) => {
         return (
-          <div>
+          <div key={index}>
             <Link to="/store">
               <Card centered onClick={() => this.addStore(shop.header)}
                 header={shop.header}
-                meta={shop.description} />
+                meta={shop.description}>
+              </Card>
             </Link>
             <br/>
           </div>
@@ -74,7 +75,7 @@ export default Home;
 
 
 
-{/* <form className="form-style" action="" method="get">
+/* <form className="form-style" action="" method="get">
                 Your Location:
                 <input type="text" name="location" placeholder=" Enter your city" />
                 <center>
@@ -94,4 +95,4 @@ export default Home;
                   <a href="#" class="icon brands fa-github" class="label">Store Z</a>
                 </li>
               </ul>
-            </footer> */}
+            </footer> */

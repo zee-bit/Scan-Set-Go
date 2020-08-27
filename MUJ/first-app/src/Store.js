@@ -12,7 +12,7 @@ class Store extends Component {
     }
 
     updateState = (add) =>  {
-        if(add.company == this.props.storeName) {
+        if(add.company === this.props.storeName) {
         this.setState((prevState) => ({
             cart: [...prevState.cart, add]
         }));
